@@ -1,0 +1,2676 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Birthday Surprise ✨</title>
+
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+>
+
+
+<script src="/config.js"></script>
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    color: white;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(105, 65, 135, 0.22),
+            transparent 38%
+        ),
+        linear-gradient(
+            180deg,
+            #190d28,
+            #0b0612
+        );
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.7) 1px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.35) 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        190px 190px,
+        280px 280px;
+
+    background-position:
+        20px 20px,
+        80px 100px;
+
+    opacity: 0.32;
+}
+
+
+/* =========================================================
+   PAGES
+========================================================= */
+
+.page {
+
+    display: none;
+
+    position: relative;
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    padding:
+        55px 25px 90px;
+
+    z-index: 1;
+}
+
+
+.page.active {
+    display: block;
+}
+
+
+/* =========================================================
+   PAGE 1
+========================================================= */
+
+.hero-page {
+
+    min-height: 100vh;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.hero-page.active {
+    display: flex;
+}
+
+
+.hero-content {
+
+    width:
+        min(900px, 100%);
+
+    margin: auto;
+}
+
+
+.hero-title {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-weight: 700;
+
+    font-size:
+        clamp(55px, 8vw, 105px);
+
+    line-height: 0.95;
+
+    margin-bottom: 25px;
+}
+
+
+.hero-heart {
+
+    font-size: 38px;
+
+    margin: 25px 0;
+}
+
+
+.hero-subtitle {
+
+    max-width: 780px;
+
+    margin: auto;
+
+    color: #d6c8da;
+
+    font-size:
+        clamp(15px, 2vw, 19px);
+
+    line-height: 1.8;
+}
+
+
+.primary-button {
+
+    margin-top: 35px;
+
+    padding:
+        15px 32px;
+
+    border-radius: 40px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.2);
+
+    background:
+        rgba(255,255,255,0.07);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    transition: 0.3s;
+}
+
+
+.primary-button:hover {
+
+    background:
+        rgba(255,255,255,0.13);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================================
+   PAGE 2
+========================================================= */
+
+.choice-page {
+
+    text-align: center;
+}
+
+
+.section-title {
+
+    max-width: 1100px;
+
+    margin:
+        0 auto 18px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(48px, 7vw, 80px);
+
+    line-height: 1.02;
+}
+
+
+.section-subtitle {
+
+    color: #bfb0c4;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 48px;
+}
+
+
+/* =========================================================
+   CHOICE GRID
+========================================================= */
+
+.choice-grid {
+
+    width:
+        min(1200px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+.choice-card {
+
+    min-height: 500px;
+
+    padding:
+        35px 18px 25px;
+
+    border-radius: 28px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.16);
+
+    background:
+        rgba(255,255,255,0.065);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s,
+        background 0.3s;
+}
+
+
+.choice-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    background:
+        rgba(255,255,255,0.09);
+}
+
+
+/* =========================================================
+   CHOICE FRAME
+========================================================= */
+
+.choice-photo-frame {
+
+    width: 215px;
+
+    height: 300px;
+
+    padding: 9px;
+
+    background:
+        #d9d1dd;
+
+    border:
+        1px solid
+        #b9adbe;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,0.32);
+}
+
+
+.choice-photo-frame img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    background:
+        #130b18;
+}
+
+
+.choice-label {
+
+    margin-top: 20px;
+
+    color: #eee5ef;
+
+    font-size: 16px;
+
+    font-weight: 600;
+}
+
+
+.wrong-message {
+
+    height: 25px;
+
+    margin-top: 9px;
+
+    color: #f1cbdc;
+
+    font-size: 13px;
+}
+
+
+.choice-card.wrong {
+
+    animation:
+        shake 0.5s ease;
+}
+
+
+@keyframes shake {
+
+    0%,100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-8px);
+    }
+
+    40% {
+        transform: translateX(8px);
+    }
+
+    60% {
+        transform: translateX(-6px);
+    }
+
+    80% {
+        transform: translateX(6px);
+    }
+}
+
+
+/* =========================================================
+   PAGE 3
+========================================================= */
+
+.gift-page {
+
+    display: none;
+
+    min-height: 100vh;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+
+.gift-page.active {
+    display: flex;
+}
+
+
+.gift-stage {
+
+    position: relative;
+
+    width:
+        min(1100px, 100%);
+
+    min-height: 720px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.gift-eyebrow {
+
+    color: #bfaec4;
+
+    letter-spacing: 4px;
+
+    font-size: 11px;
+
+    margin-bottom: 12px;
+}
+
+
+.gift-title {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(50px, 7vw, 82px);
+
+    line-height: 1;
+
+    margin-bottom: 18px;
+}
+
+
+.gift-subtitle {
+
+    max-width: 680px;
+
+    color: #d0c2d4;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+.gift-message {
+
+    max-width: 680px;
+
+    margin:
+        20px auto 25px;
+
+    color: #d6c7d9;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 21px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   GIFT BOX
+========================================================= */
+
+.gift-box-area {
+
+    position: relative;
+
+    width: 430px;
+
+    height: 320px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.gift-box {
+
+    position: relative;
+
+    width: 220px;
+
+    height: 175px;
+
+    cursor: pointer;
+
+    z-index: 20;
+}
+
+
+.gift-base {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 220px;
+
+    height: 135px;
+
+    border-radius:
+        5px 5px 14px 14px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #852a58,
+            #9b3567
+        );
+
+    box-shadow:
+        0 20px 40px
+        rgba(0,0,0,0.45);
+}
+
+
+.gift-base::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 35px;
+
+    height: 100%;
+
+    background:
+        #d7a8bd;
+}
+
+
+.gift-lid {
+
+    position: absolute;
+
+    top: 8px;
+
+    left: -12px;
+
+    width: 244px;
+
+    height: 43px;
+
+    background:
+        #aa3c6d;
+
+    border-radius: 5px;
+
+    z-index: 5;
+
+    transform-origin:
+        center bottom;
+
+    transition:
+        transform 0.8s ease;
+}
+
+
+.gift-lid::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 35px;
+
+    height: 100%;
+
+    background:
+        #d7a8bd;
+}
+
+
+.gift-bow {
+
+    position: absolute;
+
+    top: -32px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 75px;
+
+    height: 45px;
+
+    z-index: 10;
+}
+
+
+.gift-bow::before,
+.gift-bow::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 6px;
+
+    width: 36px;
+
+    height: 30px;
+
+    background:
+        #cb3757;
+
+    border-radius: 50%;
+}
+
+
+.gift-bow::before {
+    left: 1px;
+}
+
+
+.gift-bow::after {
+    right: 1px;
+}
+
+
+.gift-box.opened .gift-lid {
+
+    transform:
+        translateY(-90px)
+        rotate(-8deg);
+}
+
+
+/* =========================================================
+   BALLOONS
+========================================================= */
+
+.balloon {
+
+    position: absolute;
+
+    width: 50px;
+
+    height: 65px;
+
+    border-radius: 50%;
+
+    animation:
+        floatBalloon
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+.balloon::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 10px;
+
+    left: 12px;
+
+    width: 9px;
+
+    height: 15px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.3);
+}
+
+
+.balloon::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 100%;
+
+    left: 50%;
+
+    width: 1px;
+
+    height: 80px;
+
+    background:
+        rgba(220,205,225,0.35);
+}
+
+
+.balloon-one {
+
+    left: 4%;
+
+    top: 43%;
+
+    background: #a44372;
+}
+
+
+.balloon-two {
+
+    left: 17%;
+
+    top: 18%;
+
+    background: #765294;
+
+    animation-delay: -2s;
+}
+
+
+.balloon-three {
+
+    right: 4%;
+
+    top: 43%;
+
+    background: #9d4a70;
+
+    animation-delay: -3s;
+}
+
+
+.balloon-four {
+
+    right: 17%;
+
+    top: 18%;
+
+    background: #70538b;
+
+    animation-delay: -4s;
+}
+
+
+.balloon-five {
+
+    left: 25%;
+
+    top: 65%;
+
+    width: 42px;
+
+    height: 55px;
+
+    background: #b25880;
+
+    animation-delay: -1s;
+}
+
+
+.balloon-six {
+
+    right: 25%;
+
+    top: 65%;
+
+    width: 42px;
+
+    height: 55px;
+
+    background: #805a9b;
+
+    animation-delay: -3s;
+}
+
+
+@keyframes floatBalloon {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-3deg);
+    }
+
+    50% {
+        transform:
+            translateY(-22px)
+            rotate(4deg);
+    }
+}
+
+
+.gift-instruction {
+
+    margin-top: 10px;
+
+    padding:
+        12px 24px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.13);
+
+    color: #d6c9d8;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   PAGE 4
+========================================================= */
+
+.birthday-page {
+    padding-bottom: 110px;
+}
+
+
+.birthday-header {
+
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+
+.birthday-title {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(52px, 7vw, 90px);
+
+    line-height: 1;
+}
+
+
+.birthday-subtitle {
+
+    margin-top: 18px;
+
+    color: #c4b4c9;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   WISH CARDS
+========================================================= */
+
+.message-card,
+.second-wish-card,
+.final-card {
+
+    width:
+        min(900px, 100%);
+
+    margin:
+        45px auto;
+
+    padding:
+        clamp(28px, 5vw, 52px);
+
+    border-radius: 28px;
+
+    overflow: visible;
+
+    overflow-wrap: anywhere;
+}
+
+
+.message-card,
+.final-card {
+
+    background:
+        rgba(255,255,255,0.07);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+}
+
+
+.second-wish-card {
+
+    background:
+        rgba(113,77,128,0.14);
+
+    border:
+        1px solid
+        rgba(210,187,216,0.2);
+}
+
+
+.message-text {
+
+    color: #e7dfe8;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 23px;
+}
+
+
+.message-text:last-child {
+    margin-bottom: 0;
+}
+
+
+.second-wish-decoration {
+
+    text-align: center;
+
+    font-size: 24px;
+
+    margin-bottom: 20px;
+}
+
+
+.second-wish-heading {
+
+    text-align: center;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(32px, 4vw, 45px);
+
+    margin-bottom: 28px;
+}
+
+
+.final-card h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 36px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   MEMORIES
+========================================================= */
+
+.memories-title {
+
+    text-align: center;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(45px, 6vw, 65px);
+
+    margin:
+        80px auto 50px;
+}
+
+
+.scrapbook {
+
+    width:
+        min(1120px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 55px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   SCRAPBOOK FRAME
+========================================================= */
+
+.photo-frame {
+
+    width: 100%;
+
+    height: 500px;
+
+    padding:
+        13px 13px 18px;
+
+    background:
+        #f1ecf2;
+
+    color:
+        #3d3040;
+
+    border:
+        1px solid
+        rgba(70,55,75,0.12);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,0.35);
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+.photo-frame:nth-child(1) {
+
+    transform:
+        rotate(-1.3deg);
+}
+
+
+.photo-frame:nth-child(2) {
+
+    transform:
+        rotate(1.3deg);
+}
+
+
+.photo-frame:nth-child(3) {
+
+    grid-column:
+        1 / -1;
+
+    width:
+        min(560px, 100%);
+
+    justify-self: center;
+
+    transform:
+        rotate(-0.7deg);
+}
+
+
+/* =========================================================
+   PHOTO AREA
+========================================================= */
+
+.photo-image-wrapper {
+
+    width: 100%;
+
+    height: 390px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        #e4dfe5;
+}
+
+
+.photo-image-wrapper img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    /*
+       IMPORTANT:
+       contain means the COMPLETE photo remains visible.
+    */
+
+    object-fit: contain;
+
+    object-position: center;
+
+    background:
+        #e4dfe5;
+}
+
+
+.photo-caption {
+
+    flex: 1;
+
+    min-height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        8px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+.confetti {
+
+    position: fixed;
+
+    top: -20px;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    animation:
+        fall
+        linear
+        forwards;
+}
+
+
+@keyframes fall {
+
+    to {
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .choice-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0,1fr));
+
+        max-width: 800px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .page {
+
+        padding:
+            40px 17px 70px;
+    }
+
+
+    .choice-grid {
+
+        grid-template-columns: 1fr;
+
+        max-width: 400px;
+    }
+
+
+    .choice-card {
+
+        min-height: 440px;
+    }
+
+
+    .choice-photo-frame {
+
+        width: 210px;
+
+        height: 285px;
+    }
+
+
+    .gift-stage {
+
+        min-height: 700px;
+    }
+
+
+    .gift-box-area {
+
+        width: 330px;
+
+        max-width: 100%;
+
+        height: 300px;
+    }
+
+
+    .balloon {
+
+        width: 38px;
+
+        height: 51px;
+    }
+
+
+    .balloon-two,
+    .balloon-four {
+
+        width: 34px;
+
+        height: 45px;
+    }
+
+
+    .balloon-one {
+        left: 0;
+    }
+
+
+    .balloon-three {
+        right: 0;
+    }
+
+
+    .balloon-five {
+        left: 17%;
+    }
+
+
+    .balloon-six {
+        right: 17%;
+    }
+
+
+    .scrapbook {
+
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+
+        gap: 45px;
+    }
+
+
+    .photo-frame {
+
+        width: 100%;
+
+        height: 430px;
+
+        transform: none !important;
+    }
+
+
+    .photo-frame:nth-child(3) {
+
+        grid-column: auto;
+
+        width: 100%;
+    }
+
+
+    .photo-image-wrapper {
+
+        height: 330px;
+    }
+
+
+    .photo-caption {
+
+        min-height: 70px;
+
+        font-size: 18px;
+    }
+
+
+    .message-text {
+
+        font-size: 15px;
+
+        line-height: 1.85;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .hero-title {
+        font-size: 52px;
+    }
+
+
+    .section-title {
+        font-size: 46px;
+    }
+
+
+    .birthday-title {
+        font-size: 51px;
+    }
+
+
+    .gift-title {
+        font-size: 50px;
+    }
+
+
+    .gift-message {
+        font-size: 19px;
+    }
+
+
+    .photo-frame {
+
+        height: 400px;
+    }
+
+
+    .photo-image-wrapper {
+
+        height: 300px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     PAGE 1
+======================================================== -->
+
+<section
+    id="page1"
+    class="page hero-page active"
+>
+
+    <div class="hero-content">
+
+        <h1 class="hero-title">
+
+            Happy Birthday,
+
+            <br>
+
+            <span id="heroName"></span>
+
+            ❤️
+
+        </h1>
+
+
+        <div class="hero-heart">
+            💕
+        </div>
+
+
+        <p
+            id="introWish"
+            class="hero-subtitle"
+        ></p>
+
+
+        <button
+            class="primary-button"
+            onclick="goToPage(2)"
+        >
+
+            I Have a Surprise for You ✨
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     PAGE 2
+======================================================== -->
+
+<section
+    id="page2"
+    class="page choice-page"
+>
+
+    <h1 class="section-title">
+
+        <span id="choiceName"></span>
+
+        ... one of us has something for you
+
+    </h1>
+
+
+    <p class="section-subtitle">
+
+        Four people. Four memories.
+        But only one is hiding your birthday surprise. ✨
+
+        <br>
+
+        Choose carefully...
+        I’m not telling you who. 😜
+
+    </p>
+
+
+    <div
+        id="choiceGrid"
+        class="choice-grid"
+    ></div>
+
+</section>
+
+
+
+<!-- =======================================================
+     PAGE 3
+======================================================== -->
+
+<section
+    id="page3"
+    class="page gift-page"
+>
+
+    <div class="gift-stage">
+
+
+        <div class="gift-eyebrow">
+            A LITTLE SOMETHING FOR YOU
+        </div>
+
+
+        <h1 class="gift-title">
+            You found your surprise! 🎉
+        </h1>
+
+
+        <p class="gift-subtitle">
+
+            After all those choices,
+            you finally found the little surprise
+            waiting just for you. ❤️
+
+        </p>
+
+
+        <div class="gift-message">
+
+            Some surprises are wrapped in paper.
+            This one is wrapped in memories,
+            love and birthday wishes. ✨
+
+        </div>
+
+
+        <div class="gift-box-area">
+
+
+            <div class="balloon balloon-one"></div>
+
+            <div class="balloon balloon-two"></div>
+
+            <div class="balloon balloon-three"></div>
+
+            <div class="balloon balloon-four"></div>
+
+            <div class="balloon balloon-five"></div>
+
+            <div class="balloon balloon-six"></div>
+
+
+            <div
+                id="giftBox"
+                class="gift-box"
+                onclick="openGift()"
+            >
+
+                <div class="gift-base"></div>
+
+                <div class="gift-lid"></div>
+
+                <div class="gift-bow"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="gift-instruction">
+
+            🎁 Tap the gift...
+            something special is waiting inside ✨
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     PAGE 4
+======================================================== -->
+
+<section
+    id="page4"
+    class="page birthday-page"
+>
+
+
+    <div class="birthday-header">
+
+        <h1 class="birthday-title">
+
+            Happy Birthday,
+
+            <span id="birthdayName"></span>
+
+            ❤️
+
+        </h1>
+
+
+        <p class="birthday-subtitle">
+
+            A little collection of memories,
+            wishes and love ✨
+
+        </p>
+
+    </div>
+
+
+
+    <!-- MAIN WISH -->
+
+    <div
+        id="mainMessage"
+        class="message-card"
+    ></div>
+
+
+
+    <!-- PHOTOS -->
+
+    <h2 class="memories-title">
+
+        Memories That Last Forever 📸
+
+    </h2>
+
+
+    <div
+        id="scrapbook"
+        class="scrapbook"
+    ></div>
+
+
+
+    <!-- SECOND WISH -->
+
+    <div
+        id="secondWishCard"
+        class="second-wish-card"
+    >
+
+        <div class="second-wish-decoration">
+
+            💕 ✨ 💕 ✨ 💕
+
+        </div>
+
+
+        <h2
+            id="secondWishHeading"
+            class="second-wish-heading"
+        ></h2>
+
+
+        <div
+            id="secondWishContent"
+        ></div>
+
+    </div>
+
+
+
+    <!-- FINAL WISH -->
+
+    <div
+        id="finalMessage"
+        class="final-card"
+    ></div>
+
+
+</section>
+
+
+
+<script>
+
+/* =========================================================
+   IMPORTANT IMAGE URL FUNCTION
+========================================================= */
+
+/*
+ * Your .env contains paths like:
+ *
+ * teddies/DAD.jpeg
+ * photos/Family.jpeg
+ * photos/Bro &Sis.jpeg
+ *
+ * We encode EACH part separately.
+ *
+ * This is especially important for:
+ *
+ * Bro &Sis.jpeg
+ *
+ * because & must become %26 in the URL.
+ */
+
+function assetUrl(path) {
+
+    if (!path) {
+        return "";
+    }
+
+
+    path = String(path)
+        .trim()
+        .replaceAll("\\", "/");
+
+
+    /*
+     * Remove accidental leading /
+     */
+
+    path =
+        path.replace(
+            /^\/+/,
+            ""
+        );
+
+
+    /*
+     * Encode each path section separately.
+     *
+     * Example:
+     *
+     * photos/Bro &Sis.jpeg
+     *
+     * becomes:
+     *
+     * /asset/photos/Bro%20%26Sis.jpeg
+     */
+
+    const parts =
+        path
+        .split("/")
+        .filter(
+            part => part.length > 0
+        )
+        .map(
+            part =>
+                encodeURIComponent(part)
+        );
+
+
+    return "/asset/" + parts.join("/");
+}
+
+
+/* =========================================================
+   PAGE NAVIGATION
+========================================================= */
+
+function goToPage(number) {
+
+    document
+        .querySelectorAll(".page")
+        .forEach(
+            page => {
+
+                page.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+    const target =
+        document.getElementById(
+            "page" + number
+        );
+
+
+    if (target) {
+
+        target.classList.add(
+            "active"
+        );
+
+    }
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        document.getElementById(
+            "heroName"
+        ).textContent =
+            birthdayConfig.name;
+
+
+        document.getElementById(
+            "choiceName"
+        ).textContent =
+            birthdayConfig.name;
+
+
+        document.getElementById(
+            "birthdayName"
+        ).textContent =
+            birthdayConfig.name;
+
+
+        document.getElementById(
+            "introWish"
+        ).textContent =
+            birthdayConfig.introWish;
+
+
+        buildChoices();
+
+        buildMainWish();
+
+        buildPhotos();
+
+        buildSecondWish();
+
+        buildFinalWish();
+
+    }
+);
+
+
+/* =========================================================
+   CHOICES
+========================================================= */
+
+function buildChoices() {
+
+    const grid =
+        document.getElementById(
+            "choiceGrid"
+        );
+
+
+    grid.innerHTML = "";
+
+
+    birthdayConfig.teddies.forEach(
+        function(person) {
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "choice-card";
+
+
+            const frame =
+                document.createElement(
+                    "div"
+                );
+
+
+            frame.className =
+                "choice-photo-frame";
+
+
+            const image =
+                document.createElement(
+                    "img"
+                );
+
+
+            image.src =
+                assetUrl(
+                    person.image
+                );
+
+
+            image.alt =
+                person.label;
+
+
+            image.onload =
+                function() {
+
+                    console.log(
+                        "Loaded teddy:",
+                        person.image
+                    );
+
+                };
+
+
+            image.onerror =
+                function() {
+
+                    console.error(
+                        "Could not load teddy:",
+                        person.image
+                    );
+
+
+                    frame.innerHTML =
+                        `
+                        <div style="
+                            width:100%;
+                            height:100%;
+                            display:flex;
+                            flex-direction:column;
+                            align-items:center;
+                            justify-content:center;
+                            text-align:center;
+                            padding:15px;
+                            color:#c5b7c8;
+                            font-size:12px;
+                            line-height:1.7;
+                        ">
+                            <div style="
+                                font-size:30px;
+                                margin-bottom:10px;
+                            ">
+                                🖼️
+                            </div>
+
+                            Image could not be loaded
+
+                            <br>
+
+                            <span style="
+                                opacity:.5;
+                                font-size:10px;
+                                word-break:break-all;
+                            ">
+                                ${person.image}
+                            </span>
+                        </div>
+                        `;
+
+                };
+
+
+            frame.appendChild(
+                image
+            );
+
+
+            const label =
+                document.createElement(
+                    "div"
+                );
+
+
+            label.className =
+                "choice-label";
+
+
+            label.textContent =
+                person.label;
+
+
+            const wrongMessage =
+                document.createElement(
+                    "div"
+                );
+
+
+            wrongMessage.className =
+                "wrong-message";
+
+
+            card.appendChild(
+                frame
+            );
+
+
+            card.appendChild(
+                label
+            );
+
+
+            card.appendChild(
+                wrongMessage
+            );
+
+
+            card.addEventListener(
+                "click",
+                function() {
+
+                    choosePerson(
+                        person.id,
+                        card,
+                        wrongMessage
+                    );
+
+                }
+            );
+
+
+            grid.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CHOOSE PERSON
+========================================================= */
+
+function choosePerson(
+    id,
+    card,
+    error
+) {
+
+    if (
+        id ===
+        Number(
+            birthdayConfig.luckyBear
+        )
+    ) {
+
+        card.style.pointerEvents =
+            "none";
+
+
+        createConfetti();
+
+
+        setTimeout(
+            function() {
+
+                goToPage(3);
+
+            },
+            800
+        );
+
+
+        return;
+
+    }
+
+
+    /* Wrong choice */
+
+    card.classList.remove(
+        "wrong"
+    );
+
+
+    void card.offsetWidth;
+
+
+    card.classList.add(
+        "wrong"
+    );
+
+
+    error.textContent =
+        "Not me... try again! 😜💗";
+
+
+    setTimeout(
+        function() {
+
+            error.textContent =
+                "";
+
+        },
+        2200
+    );
+
+}
+
+
+/* =========================================================
+   GIFT
+========================================================= */
+
+let giftOpened = false;
+
+
+function openGift() {
+
+    if (giftOpened) {
+        return;
+    }
+
+
+    giftOpened = true;
+
+
+    const box =
+        document.getElementById(
+            "giftBox"
+        );
+
+
+    box.classList.add(
+        "opened"
+    );
+
+
+    createConfetti();
+
+
+    setTimeout(
+        function() {
+
+            goToPage(4);
+
+        },
+        1450
+    );
+
+}
+
+
+/* =========================================================
+   TEXT → PARAGRAPHS
+========================================================= */
+
+function createParagraphs(text) {
+
+    const wrapper =
+        document.createElement(
+            "div"
+        );
+
+
+    const paragraphs =
+        String(text || "")
+        .split(
+            /\n\s*\n/
+        );
+
+
+    paragraphs.forEach(
+        function(block) {
+
+            if (
+                block.trim()
+            ) {
+
+                const p =
+                    document.createElement(
+                        "p"
+                    );
+
+
+                p.className =
+                    "message-text";
+
+
+                p.textContent =
+                    block.trim();
+
+
+                wrapper.appendChild(
+                    p
+                );
+
+            }
+
+        }
+    );
+
+
+    return wrapper;
+
+}
+
+
+/* =========================================================
+   MAIN WISH
+========================================================= */
+
+function buildMainWish() {
+
+    const container =
+        document.getElementById(
+            "mainMessage"
+        );
+
+
+    container.innerHTML = "";
+
+
+    container.appendChild(
+        createParagraphs(
+            birthdayConfig.mainWish
+        )
+    );
+
+}
+
+
+/* =========================================================
+   SECOND WISH
+========================================================= */
+
+function buildSecondWish() {
+
+    const card =
+        document.getElementById(
+            "secondWishCard"
+        );
+
+
+    const heading =
+        document.getElementById(
+            "secondWishHeading"
+        );
+
+
+    const content =
+        document.getElementById(
+            "secondWishContent"
+        );
+
+
+    const text =
+        String(
+            birthdayConfig.secondWish || ""
+        ).trim();
+
+
+    if (!text) {
+
+        card.style.display =
+            "none";
+
+        return;
+    }
+
+
+    const lines =
+        text.split("\n");
+
+
+    heading.textContent =
+        lines[0];
+
+
+    const remaining =
+        lines
+        .slice(1)
+        .join("\n")
+        .trim();
+
+
+    content.innerHTML = "";
+
+
+    content.appendChild(
+        createParagraphs(
+            remaining
+        )
+    );
+
+}
+
+
+/* =========================================================
+   PHOTOS
+========================================================= */
+
+function buildPhotos() {
+
+    const scrapbook =
+        document.getElementById(
+            "scrapbook"
+        );
+
+
+    scrapbook.innerHTML = "";
+
+
+    birthdayConfig.photos.forEach(
+        function(photo) {
+
+            const frame =
+                document.createElement(
+                    "div"
+                );
+
+
+            frame.className =
+                "photo-frame";
+
+
+            const imageWrapper =
+                document.createElement(
+                    "div"
+                );
+
+
+            imageWrapper.className =
+                "photo-image-wrapper";
+
+
+            const image =
+                document.createElement(
+                    "img"
+                );
+
+
+            image.src =
+                assetUrl(
+                    photo.image
+                );
+
+
+            image.alt =
+                photo.caption;
+
+
+            image.loading =
+                "eager";
+
+
+            image.onload =
+                function() {
+
+                    console.log(
+                        "Loaded photo:",
+                        photo.image
+                    );
+
+                };
+
+
+            image.onerror =
+                function() {
+
+                    console.error(
+                        "Could not load photo:",
+                        photo.image
+                    );
+
+
+                    imageWrapper.innerHTML =
+                        `
+                        <div style="
+                            width:100%;
+                            height:100%;
+                            display:flex;
+                            flex-direction:column;
+                            align-items:center;
+                            justify-content:center;
+                            text-align:center;
+                            padding:20px;
+                            color:#777;
+                            font-size:13px;
+                            line-height:1.7;
+                        ">
+                            <div style="
+                                font-size:35px;
+                                margin-bottom:12px;
+                            ">
+                                🖼️
+                            </div>
+
+                            Image could not be loaded
+
+                            <br>
+
+                            <span style="
+                                font-size:10px;
+                                opacity:.6;
+                                word-break:break-all;
+                            ">
+                                ${photo.image}
+                            </span>
+                        </div>
+                        `;
+
+                };
+
+
+            imageWrapper.appendChild(
+                image
+            );
+
+
+            const caption =
+                document.createElement(
+                    "div"
+                );
+
+
+            caption.className =
+                "photo-caption";
+
+
+            caption.textContent =
+                photo.caption;
+
+
+            frame.appendChild(
+                imageWrapper
+            );
+
+
+            frame.appendChild(
+                caption
+            );
+
+
+            scrapbook.appendChild(
+                frame
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   FINAL WISH
+========================================================= */
+
+function buildFinalWish() {
+
+    const container =
+        document.getElementById(
+            "finalMessage"
+        );
+
+
+    container.innerHTML = "";
+
+
+    const text =
+        String(
+            birthdayConfig.finalWish || ""
+        ).trim();
+
+
+    const lines =
+        text.split("\n");
+
+
+    const heading =
+        document.createElement(
+            "h2"
+        );
+
+
+    heading.textContent =
+        lines[0] ||
+        "One Last Thing…";
+
+
+    container.appendChild(
+        heading
+    );
+
+
+    const remaining =
+        lines
+        .slice(1)
+        .join("\n")
+        .trim();
+
+
+    if (remaining) {
+
+        container.appendChild(
+            createParagraphs(
+                remaining
+            )
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+function createConfetti() {
+
+    const symbols = [
+        "💗",
+        "💕",
+        "✨",
+        "⭐",
+        "💜",
+        "❤️",
+        "🎉",
+        "🥳"
+    ];
+
+
+    for (
+        let i = 0;
+        i < 45;
+        i++
+    ) {
+
+        const item =
+            document.createElement(
+                "div"
+            );
+
+
+        item.className =
+            "confetti";
+
+
+        item.textContent =
+            symbols[
+                Math.floor(
+                    Math.random()
+                    *
+                    symbols.length
+                )
+            ];
+
+
+        item.style.left =
+            (
+                Math.random() * 100
+            ) +
+            "vw";
+
+
+        item.style.fontSize =
+            (
+                12 +
+                Math.random() * 18
+            ) +
+            "px";
+
+
+        item.style.animationDuration =
+            (
+                3 +
+                Math.random() * 3
+            ) +
+            "s";
+
+
+        document.body.appendChild(
+            item
+        );
+
+
+        setTimeout(
+            function() {
+
+                item.remove();
+
+            },
+            7000
+        );
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>
